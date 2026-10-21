@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOS.Ajuda — protótipo de ajuda comunitária para problemas do dia a dia.">
+  <title>SOS.Ajuda — Comunidade que resolve</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="SOS.Ajuda início">
+        <span class="brand-mark">SOS</span>
+        <span class="brand-name">.Ajuda</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav-link active" href="#inicio">Início</a>
+        <a class="nav-link" href="#pedidos">Pedidos</a>
+        <a class="nav-link" href="#como-funciona">Como funciona</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Ativar tema escuro" title="Tema escuro">
+          <span id="themeIcon">☾</span>
+        </button>
+        <button class="primary-btn compact" data-open-modal>Preciso de ajuda</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> Comunidade ativa</div>
+          <h1>Um problema na sua rotina?<br><span>Alguém pode ajudar.</span></h1>
+          <p class="hero-lead">
+            O SOS.Ajuda conecta pessoas que precisam resolver pequenas dificuldades
+            do dia a dia com pessoas da própria comunidade dispostas a ajudar.
+          </p>
+
+          <div class="hero-actions">
+            <button class="primary-btn" data-open-modal>🆘 Criar pedido</button>
+            <a class="secondary-btn" href="#pedidos">Ver pedidos próximos</a>
+          </div>
+
+          <div class="hero-stats">
+            <div><strong id="statRequests">128</strong><span>pedidos resolvidos</span></div>
+            <div><strong>43</strong><span>pessoas ajudando</span></div>
+            <div><strong>4,9</strong><span>avaliação média</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="map-card">
+            <div class="map-top">
+              <div>
+                <small>AGORA NA COMUNIDADE</small>
+                <strong>Pedidos perto de você</strong>
+              </div>
+              <span class="live-pill">● AO VIVO</span>
+            </div>
+
+            <div class="map-area">
+              <span class="road road-a"></span>
+              <span class="road road-b"></span>
+              <span class="road road-c"></span>
+              <span class="map-label label-a">Centro</span>
+              <span class="map-label label-b">Vila Nova</span>
+              <span class="map-label label-c">Jardins</span>
+              <button class="map-pin pin-a" aria-label="Pedido de conserto">🔧</button>
+              <button class="map-pin pin-b" aria-label="Pedido de transporte">🚗</button>
+              <button class="map-pin pin-c" aria-label="Pedido de tecnologia">💻</button>
+              <span class="you-pin"><i></i> Você</span>
+            </div>
+
+            <div class="map-footer">
+              <span><i class="dot red"></i> 3 precisam de ajuda</span>
+              <span><i class="dot green"></i> 8 ajudantes online</span>
+            </div>
+          </div>
+
+          <div class="floating-help">
+            <div class="mini-avatar">M</div>
+            <div>
+              <strong>Marcos precisa de ajuda</strong>
+              <span>Computador não liga · 1,8 km</span>
+            </div>
+            <button class="circle-btn" data-quick-help aria-label="Quero ajudar">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section categories" id="categorias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">ENCONTRE UMA SOLUÇÃO</span>
+            <h2>O que você precisa?</h2>
+          </div>
+          <p>Escolha uma categoria e conte o que aconteceu.</p>
+        </div>
+
+        <div class="category-grid">
+          <button class="category-card" data-category="Consertos"><span>🔧</span><strong>Consertos</strong><small>Casa, móveis e objetos</small></button>
+          <button class="category-card" data-category="Tecnologia"><span>💻</span><strong>Tecnologia</strong><small>PC, celular e internet</small></button>
+          <button class="category-card" data-category="Transporte"><span>🚗</span><strong>Transporte</strong><small>Carona e deslocamento</small></button>
+          <button class="category-card" data-category="Casa"><span>🏠</span><strong>Casa</strong><small>Tarefas e mudanças</small></button>
+          <button class="category-card" data-category="Animais"><span>🐶</span><strong>Animais</strong><small>Pets e cuidados</small></button>
+          <button class="category-card" data-category="Estudos"><span>📚</span><strong>Estudos</strong><small>Aulas e dúvidas</small></button>
+          <button class="category-card" data-category="Compras"><span>🛒</span><strong>Compras</strong><small>Buscar e entregar</small></button>
+          <button class="category-card special" data-category="Outra necessidade"><span>🆘</span><strong>Outra necessidade</strong><small>Conte sua situação</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section requests" id="pedidos">
+      <div class="container">
+        <div class="section-head requests-head">
+          <div>
+            <span class="section-kicker">PERTO DE VOCÊ</span>
+            <h2>Pedidos que precisam de ajuda</h2>
+          </div>
+          <div class="request-tools">
+            <label class="search-field">
+              <span>⌕</span>
+              <input id="requestSearch" type="search" placeholder="Buscar pedido..." aria-label="Buscar pedido">
+            </label>
+            <button class="outline-btn" id="locationBtn">📍 Minha região</button>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <button class="filter active" data-filter="Todos">Todos</button>
+          <button class="filter" data-filter="Consertos">🔧 Consertos</button>
+          <button class="filter" data-filter="Tecnologia">💻 Tecnologia</button>
+          <button class="filter" data-filter="Casa">🏠 Casa</button>
+          <button class="filter" data-filter="Compras">🛒 Compras</button>
+        </div>
+
+        <div class="request-grid" id="requestGrid">
+          <article class="request-card" data-category="Tecnologia" data-search="computador pc tecnologia não liga">
+            <div class="request-card-top"><span class="tag">💻 Tecnologia</span><span class="distance">1,8 km</span></div>
+            <h3>Meu computador não liga</h3>
+            <p>Preciso de alguém que entenda de computador para descobrir o que aconteceu.</p>
+            <div class="request-person"><div class="avatar blue">M</div><div><strong>Marcos</strong><span>Há 12 min</span></div></div>
+            <button class="card-action" data-request-title="Meu computador não liga">Ver pedido</button>
+          </article>
+
+          <article class="request-card" data-category="Compras" data-search="encomenda compra entrega buscar">
+            <div class="request-card-top"><span class="tag">🛒 Compras</span><span class="distance">800 m</span></div>
+            <h3>Preciso buscar uma encomenda</h3>
+            <p>Alguém poderia buscar uma encomenda para mim? É perto da minha casa.</p>
+            <div class="request-person"><div class="avatar purple">A</div><div><strong>Ana</strong><span>Há 25 min</span></div></div>
+            <button class="card-action" data-request-title="Preciso buscar uma encomenda">Ver pedido</button>
+          </article>
+
+          <article class="request-card" data-category="Casa" data-search="móvel montagem casa ferramentas">
+            <div class="request-card-top"><span class="tag">🏠 Casa</span><span class="distance">2,4 km</span></div>
+            <h3>Preciso montar um móvel</h3>
+            <p>Comprei um móvel novo, mas não tenho as ferramentas necessárias.</p>
+            <div class="request-person"><div class="avatar green">R</div><div><strong>Rafael</strong><span>Há 41 min</span></div></div>
+            <button class="card-action" data-request-title="Preciso montar um móvel">Ver pedido</button>
+          </article>
+
+          <article class="request-card" data-category="Consertos" data-search="torneira vazamento conserto água">
+            <div class="request-card-top"><span class="tag">🔧 Consertos</span><span class="distance">1,2 km</span></div>
+            <h3>Torneira começou a vazar</h3>
+            <p>O vazamento começou hoje e preciso de orientação para resolver.</p>
+            <div class="request-person"><div class="avatar orange">L</div><div><strong>Lucas</strong><span>Há 1 h</span></div></div>
+            <button class="card-action" data-request-title="Torneira começou a vazar">Ver pedido</button>
+          </article>
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span>🔎</span>
+          <h3>Nenhum pedido encontrado</h3>
+          <p>Tente outra busca ou crie um novo pedido de ajuda.</p>
+          <button class="primary-btn compact" data-open-modal>Criar pedido</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how" id="como-funciona">
+      <div class="container">
+        <div class="center-head">
+          <span class="section-kicker">SIMPLES E DIRETO</span>
+          <h2>Do problema à solução.</h2>
+          <p>O conceito do SOS.Ajuda foi pensado para transformar uma necessidade em uma ação simples.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step"><span class="step-num">01</span><div class="step-icon">📝</div><h3>Conte o problema</h3><p>Descreva sua necessidade em poucos passos.</p></div>
+          <div class="step-connector"></div>
+          <div class="step"><span class="step-num">02</span><div class="step-icon">🤝</div><h3>Alguém oferece ajuda</h3><p>Pessoas da comunidade visualizam os pedidos.</p></div>
+          <div class="step-connector"></div>
+          <div class="step"><span class="step-num">03</span><div class="step-icon">✓</div><h3>Resolva juntos</h3><p>Combine a ajuda e marque o problema como resolvido.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <span class="section-kicker">UMA IDEIA SIMPLES</span>
+            <h2>Problemas pequenos também merecem uma solução.</h2>
+            <p>Crie um pedido e descubra se alguém perto pode ajudar.</p>
+          </div>
+          <button class="primary-btn light" data-open-modal>🆘 Criar pedido de ajuda</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <a class="brand" href="#inicio"><span class="brand-mark">SOS</span><span class="brand-name">.Ajuda</span></a>
+        <p>Um protótipo de plataforma para aproximar pessoas e resolver problemas reais da comunidade.</p>
+      </div>
+      <div class="footer-column"><strong>Plataforma</strong><a href="#pedidos">Pedidos</a><a href="#como-funciona">Como funciona</a><a href="#categorias">Categorias</a></div>
+      <div class="footer-column"><strong>Sobre o projeto</strong><a href="#inicio">Nossa ideia</a><a href="#como-funciona">Como funciona</a><a href="#" id="demoLink">Demonstração</a></div>
+      <div class="footer-column"><strong>Protótipo</strong><span>Projeto acadêmico</span><span>Interface demonstrativa</span><span>2026</span></div>
+    </div>
+    <div class="footer-bottom"><div class="container">© 2026 SOS.Ajuda — Projeto demonstrativo.</div></div>
+  </footer>
+
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <div class="modal-icon" id="modalIcon">🆘</div>
+      <span class="section-kicker">NOVO PEDIDO</span>
+      <h2 id="modalTitle">Como podemos ajudar?</h2>
+      <p>Descreva sua necessidade. Neste protótipo, o pedido aparece imediatamente na lista da comunidade.</p>
+      <form id="helpForm">
+        <label for="category">Categoria</label>
+        <select id="category" required>
+          <option value="">Selecione uma categoria</option>
+          <option>Consertos</option><option>Tecnologia</option><option>Transporte</option>
+          <option>Casa</option><option>Animais</option><option>Estudos</option>
+          <option>Compras</option><option>Outra necessidade</option>
+        </select>
+
+        <label for="description">O que aconteceu?</label>
+        <textarea id="description" rows="4" placeholder="Ex.: Meu computador liga, mas não aparece imagem..." required></textarea>
+
+        <label for="location">Onde é?</label>
+        <input id="location" type="text" placeholder="Ex.: Bairro, rua ou ponto de referência" required>
+
+        <div class="form-note">💡 Não coloque dados pessoais sensíveis. Este é um protótipo de apresentação.</div>
+        <button class="primary-btn submit-btn" type="submit">Publicar pedido</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"><span id="toastIcon">✓</span><span id="toastMessage">Tudo certo!</span></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
